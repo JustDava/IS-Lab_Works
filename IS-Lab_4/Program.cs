@@ -6,19 +6,17 @@ namespace IS_Lab_4
 {
     class Program
     {
-        static long[] c;
+        static long[] c = new long[1000];
 
         public static void coef(int n)
         {
-            c = new long[n+1];
-
             c[0] = 1;
 
 
 
             for (int i = 0; i < n; c[0] = -c[0], i++)
             {
-                c[1 + i] = 1;
+                c[i + 1] = 1;       
 
                 for (int j = i; j > 0; j--)
 
@@ -41,7 +39,6 @@ namespace IS_Lab_4
             while ((i--) > 0 && c[i] % n == 0) ;
 
             return i < 0;
-
         }
 
         public static bool MillerRabinTest(BigInteger n, int k)
